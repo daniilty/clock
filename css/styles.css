@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: black;
+}
+
+.main-container {
+	margin-top: 25%;
+	margin-left: 25%;
+}
+
+
+
+#clock {
+    color: white;
+    font-size: 13vw;
+    font-weight: 700;
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+}
