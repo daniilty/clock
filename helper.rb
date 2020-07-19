@@ -20,7 +20,7 @@ class Info
     end
     arr = string.split(' ')
     string = arr[0] + ' ' + string1.split(' ')[0]
-    File.open('weather.txt', 'w') {  |file| 
+    File.open('js/weather.txt', 'w') {  |file| 
         file.write(string)
     }
   end

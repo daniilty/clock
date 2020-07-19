@@ -17,7 +17,6 @@ function realtimeClock() {
   function showWatch(current) {
     watch.textContent = current;
   }
-
   setInterval(function () {
     showWatch(getHour());
   }, 1000);
