@@ -2,20 +2,22 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: black;
+    background-image: url('wp.png');
 }
 
 .main-container {
 	margin-top: 25%;
 	margin-left: 25%;
+	background-color: rgba(0,0,0,.0);
 }
 
-
+* {
+    font-family: 'Roboto', sans-serif;
+}
 
 #clock {
-    color: white;
+    color: rgba(255,255,255,.6);
     font-size: 13vw;
     font-weight: 700;
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0,0,0,.0); 
 }
