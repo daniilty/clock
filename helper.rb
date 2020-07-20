@@ -8,6 +8,9 @@ class Info
   def initialize()
       doc = HTTParty.get("https://www.gismeteo.ru/")
       @page = Nokogiri::HTML(doc)
+      @html = ""
+      File.foreach("index1.html") { |line| @html += line }
+      @parsed_data = Nokogiri::HTML(@html)
   end
   def prin()
     string = ""
@@ -20,8 +23,14 @@ class Info
     end
     arr = string.split(' ')
     string = arr[0] + ' ' + string1.split(' ')[0]
-    File.open('js/weather.txt', 'w') {  |file| 
-        file.write(string)
+    string1 = ""
+    @parsed_data.xpath('//h1[@class = "weather"]').each do |el|
+      string1 += el.text
+    end
+    @html = @html.split(string1)
+    new_html = @html[0] + string + @html[1]
+    File.open('index1.html', 'w') {  |file| 
+        file.write(new_html)
     }
   end
 
