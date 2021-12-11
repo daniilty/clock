@@ -218,11 +218,12 @@ html {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-image: url('wp1.jpg');
+    background-size: cover;
+    background-image: url('wp9.jpg');
 }
 
 .main-container {
-	margin-top: 10%;
+	margin-top: 7%;
 	margin-left: auto;
 	background-color: rgba(0,0,0,.0);
 	text-align: center;
@@ -230,16 +231,28 @@ html {
 
 .main-container h1 {
     color: rgba(255,255,255,.7);
-    font-size: 10vw;
-    font-weight: 300;
+    font-size: 9vw;
+    font-weight: 400;
     background-color: rgba(0,0,0,.0); 
+    margin-top: 4%;
 }
-* {
-    font-family: 'SF Pro Display';
-}
-#clock {
-    color: rgba(255,255,255,.7);
-    font-size: 13vw;
+
+.main-container h2 {
+    color: rgba(255,255,255,.5);
+    margin-top: -3%;
+    font-size: 7vw;
     font-weight: 400;
     background-color: rgba(0,0,0,.0); 
 }
+
+* {
+    font-family: 'SF Pro Display';
+}
+
+#clock {
+    color: rgba(255,255,255,.7);
+    font-size: 14vw;
+    font-weight: 600;
+    background-color: rgba(0,0,0,.0); 
+}
+

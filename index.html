@@ -7,13 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto:100&display=swap" rel="stylesheet">
-    <script src="js/script1.js"></script>
     <script src="js/script.js"></script>
 </head>
-<body onload="realtimeClock()">
+<body>
+  <script>
+    window.onload = function () {
+      conn = new WebSocket("ws://" + "localhost:8000" + "/ws");
+      conn.onclose = function (evt) {
+        console.log(evt);
+      };
+      conn.onmessage = function (evt) {
+        message = JSON.parse(evt.data);
+        if (message.type == "error") {
+          console.log(message);
+          return
+        }
+        weather = document.getElementById('weather');
+        portfolio = document.getElementById('portfolio');
+
+        weather.innerHTML = message.data.weather;
+        portfolio.innerHTML = 'По портфелю ' +  message.data.diff;
+      };
+    
+      realtimeClock();
+    };
+  </script>
     <div class="main-container">
         <div id="clock"></div>
-	<div class="weather">sample</div>
+	<h1 id="weather"></h1>
+	<h2 id="portfolio"></h2>
     </div>
 </body>
 </html>
