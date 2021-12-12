@@ -20,6 +20,7 @@
         message = JSON.parse(evt.data);
         if (message.type == "error") {
           console.log(message);
+          window.location.reload();
           return
         }
         weather = document.getElementById('weather');
