@@ -12,7 +12,7 @@
 <body>
   <script>
     window.onload = function () {
-      conn = new WebSocket("ws://" + "localhost:8000" + "/ws");
+      conn = new WebSocket("ws://" + "clock-server:8000" + "/ws");
       conn.onclose = function (evt) {
         console.log(evt);
       };
