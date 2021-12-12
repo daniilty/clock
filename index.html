@@ -11,8 +11,12 @@
 </head>
 <body>
   <script>
+    function sleep (time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    }
+
     window.onload = function () {
-      conn = new WebSocket("ws://" + "clock-server:8000" + "/ws");
+      conn = new WebSocket("ws://" + "localhost:8000" + "/ws");
       conn.onclose = function (evt) {
         console.log(evt);
       };
@@ -20,9 +24,14 @@
         message = JSON.parse(evt.data);
         if (message.type == "error") {
           console.log(message);
-          window.location.reload();
+          
+          sleep(10000).then(() => {
+            window.location.reload();
+          });
+         
           return
         }
+        
         weather = document.getElementById('weather');
         portfolio = document.getElementById('portfolio');
 
