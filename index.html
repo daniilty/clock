@@ -35,7 +35,7 @@
         weather = document.getElementById('weather');
         portfolio = document.getElementById('portfolio');
 
-        weather.innerHTML = message.data.weather;
+        weather.innerHTML = 'На улице: ' + message.data.weather;
         portfolio.innerHTML = 'По портфелю ' +  message.data.diff;
       };
     
